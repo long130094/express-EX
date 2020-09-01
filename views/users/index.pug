@@ -1,0 +1,15 @@
+h1 Users
+a(href="/user/create") New Name 
+form(action="/user/search", method="GET")
+    input(type="text", name="q", value=question)
+    button Search
+if !users.length  
+        p No Found
+else 
+        ul  
+            each user in users
+                li
+                    span= user.name 
+                    a(href="/user/" +user.id) view  
+                    a(href="/user/" +user.id +"/delete") Delete
+
